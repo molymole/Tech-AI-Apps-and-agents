@@ -1,5 +1,5 @@
 {
-  "description": "Zava Inventory Agent",
+  "description": "MH Inventory Agent",
   "definition": {
     "kind": "prompt",
     "model": "${GPT_DEPLOYMENT}",

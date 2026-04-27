@@ -1,7 +1,7 @@
 [project]
-name = "zava-chat-app"
+name = "MH-chat-app"
 version = "0.1.0"
-description = "Zava AI Shopping Assistant"
+description = "MH AI Shopping Assistant"
 requires-python = ">=3.12"
 dependencies = [
     "requests==2.33.1",

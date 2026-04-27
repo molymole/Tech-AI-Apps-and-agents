@@ -4896,7 +4896,7 @@ wheels = [
 ]
 
 [[package]]
-name = "zava-chat-app"
+name = "MH-chat-app"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [

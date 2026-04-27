@@ -1,3 +1,3 @@
-"""Zava A2A API package."""
+"""MH A2A API package."""
 
 __version__ = "1.0.0"

@@ -9,7 +9,7 @@ has_children: true
 
 ## Scenario
 
-As AI models become more sophisticated and are integrated into various applications, it is crucial to ensure their security and reliability. Red teaming is a proactive approach to identify vulnerabilities and weaknesses in AI systems by simulating real-world attacks and adversarial scenarios. By conducting red teaming exercises, organizations can uncover potential risks, assess the robustness of their AI models, and implement necessary safeguards to mitigate threats. This is especially important for Zava, as they want to ensure that their multimodal AI shopping assistant is secure and trustworthy for their customers.
+As AI models become more sophisticated and are integrated into various applications, it is crucial to ensure their security and reliability. Red teaming is a proactive approach to identify vulnerabilities and weaknesses in AI systems by simulating real-world attacks and adversarial scenarios. By conducting red teaming exercises, organizations can uncover potential risks, assess the robustness of their AI models, and implement necessary safeguards to mitigate threats. This is especially important for MH, as they want to ensure that their multimodal AI shopping assistant is secure and trustworthy for their customers.
 
 ## Objectives
 

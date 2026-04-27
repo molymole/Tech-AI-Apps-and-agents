@@ -15,7 +15,7 @@ param userPrincipalId string = deployer().objectId
 param location string = resourceGroup().location
 
 var cosmosDbName = '${uniqueString(resourceGroup().id)}-cosmosdb'
-var cosmosDbDatabaseName = 'zava'
+var cosmosDbDatabaseName = 'MH'
 var storageAccountName = '${uniqueString(resourceGroup().id)}sa'
 var aiFoundryName = 'aif-${uniqueString(resourceGroup().id)}'
 var aiProjectName = 'proj-${uniqueString(resourceGroup().id)}'
@@ -36,7 +36,8 @@ var tags = {
 
 // Ensure the current resource group has the required tag via a subscription-scoped module
 module updateRgTags 'updateRgTags.bicep' = {
-  name: 'updateRgTags'
+  // Deployment name must vary by location to avoid InvalidDeploymentLocation on redeploys.
+  name: 'updateRgTags-${uniqueString(subscription().id, resourceGroup().name, resourceGroup().location)}'
   scope: subscription()
   params: {
     rgName: resourceGroup().name
@@ -213,7 +214,7 @@ resource containerAppAcrPullRole 'Microsoft.Authorization/roleAssignments@2022-0
   }
 }
 
-@description('Creates an Azure Container App for Zava.')
+@description('Creates an Azure Container App for MH.')
 resource containerApp 'Microsoft.App/containerApps@2024-03-01' = {
   name: containerAppName
   location: location
@@ -251,7 +252,7 @@ resource containerApp 'Microsoft.App/containerApps@2024-03-01' = {
             { name: 'storage_account_name', value: storageAccount.name }
             { name: 'DATABASE_NAME', value: cosmosDbDatabaseName }
             { name: 'CONTAINER_NAME', value: 'product_catalog' }
-            { name: 'storage_container_name', value: 'zava' }
+            { name: 'storage_container_name', value: 'MH' }
             { name: 'APPLICATIONINSIGHTS_CONNECTION_STRING', secretRef: 'applicationinsights-connection-string' }
             // Telemetry
             { name: 'OTEL_INSTRUMENTATION_GENAI_CAPTURE_MESSAGE_CONTENT', value: 'true' }

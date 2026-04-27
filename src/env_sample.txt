@@ -22,11 +22,11 @@ phi_4_api_version="2024-05-01-preview"
 
 # Storage account credentials
 storage_account_name=""
-storage_container_name="zava"
+storage_container_name="MH"
 
 # Cosmos DB credentials
 COSMOS_ENDPOINT=""
-DATABASE_NAME="zava"
+DATABASE_NAME="MH"
 CONTAINER_NAME="product_catalog"
 
 # Application Insights credentials

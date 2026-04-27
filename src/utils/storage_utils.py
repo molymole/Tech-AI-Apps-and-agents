@@ -29,7 +29,7 @@ class StorageManager:
             container_name: Blob container name
         """
         self.storage_account_name = storage_account_name or os.getenv("storage_account_name", "")
-        self.container_name = container_name or os.getenv("storage_container_name", "zava")
+        self.container_name = container_name or os.getenv("storage_container_name", "MH")
         self.blob_service_client = self._create_blob_service_client()
     
     def _create_blob_service_client(self) -> BlobServiceClient:

@@ -31,7 +31,7 @@ async def lifespan(app: FastAPI):
     global httpx_client, a2a_server
     
     # Startup
-    logger.info("Starting Zava Product Manager with A2A integration...")
+    logger.info("Starting MH Product Manager with A2A integration...")
     httpx_client = httpx.AsyncClient(timeout=30)
     
     # Initialize A2A server
@@ -50,16 +50,16 @@ async def lifespan(app: FastAPI):
     yield
     
     # Shutdown
-    logger.info("Shutting down Zava Product Manager...")
+    logger.info("Shutting down MH Product Manager...")
     if httpx_client:
         await httpx_client.aclose()
 
 
 # Create FastAPI app
 app = FastAPI(
-    title="Zava Product Manager",
+    title="MH Product Manager",
     description=(
-        "A standalone web application for Zava Product Manager"
+        "A standalone web application for MH Product Manager"
     ),
     version="1.0.0",
     lifespan=lifespan
@@ -86,7 +86,7 @@ async def read_root(request: Request):
 @app.get("/health")
 async def health_check():
     """Health check endpoint for Azure App Service"""
-    return {"status": "healthy", "service": "zava-product-manager"}
+    return {"status": "healthy", "service": "MH-product-manager"}
 
 
 @app.get("/agent-card")
